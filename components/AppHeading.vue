@@ -16,14 +16,14 @@ const { title, description, cover } = defineProps<{
     />
     <section class="relative z-[48] h-full md:p-2" :class="{ 'grid min-h-[10rem] place-content-center': cover }">
       <h1
-        class="font-bold uppercase w-fit text-3xl md:text-4xl"
+        class="font-bold uppercase w-fit text-xl md:text-3xl lg:text-4xl"
         :class="{
           'rounded-lg px-2 shadow-sm': cover,
         }"
       >
         {{ title }}
       </h1>
-      <span class="dark:text-base-100">{{ description }}</span>
+      <span class="text-gray-600 dark:text-gray-400">{{ description }}</span>
     </section>
   </div>
 </template>

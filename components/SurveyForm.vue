@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { SurveyModal } from "#components";
-import { waitersList } from "@/utils/surveyInfo";
-import type { FormSubmitEvent } from "#ui/types";
+import { SurveyModal } from '#components';
+import { waitersList } from '@/utils/surveyInfo';
+import type { FormSubmitEvent } from '#ui/types';
 
 const { surveyPageLabels } = useI18n();
 
-const { surveyData, getQuestions, questions, sendSurvey, sendEmail } =
-  useSurvey();
+const { surveyData, getQuestions, questions, sendSurvey, sendEmail } = useSurvey();
 await getQuestions();
 
 const modal = useModal();
@@ -31,26 +30,17 @@ const ratings = [1, 2, 3, 4, 5];
   <UForm :state="surveyData" class="mx-auto max-w-md" @submit="onSubmit">
     <article class="flex flex-col gap-4">
       <UFormGroup :label="surveyPageLabels.form.name">
-        <UInput
-          size="xl"
-          v-model="surveyData.name"
-          placeholder="Escribe aquí"
-        />
+        <UInput size="xl" v-model="surveyData.name" placeholder="Escribe aquí" />
       </UFormGroup>
       <UFormGroup :label="surveyPageLabels.form.email">
-        <UInput
-          size="xl"
-          type="email"
-          v-model="surveyData.email"
-          placeholder="ejemplo@correo.com"
-        />
+        <UInput size="xl" type="email" v-model="surveyData.email" placeholder="ejemplo@correo.com" />
       </UFormGroup>
       <UFormGroup :label="surveyPageLabels.form.waiter">
         <USelectMenu
           v-model="surveyData.waiter"
           :options="waitersList"
           size="xl"
-          color="gray"
+          color="white"
           :ui="{ color: { gray: { outline: 'dark:bg-dark-strong' } } }"
         />
       </UFormGroup>
@@ -67,7 +57,7 @@ const ratings = [1, 2, 3, 4, 5];
             :options="ratings"
             v-model="question.rating"
             size="xl"
-            color="gray"
+            color="white"
             :ui="{ color: { gray: { outline: 'dark:bg-dark-strong' } } }"
           />
           <Icon name="i-heroicons-star" size="32" class="text-primary" />
@@ -76,22 +66,14 @@ const ratings = [1, 2, 3, 4, 5];
     </section>
 
     <UFormGroup :label="surveyPageLabels.form.comments">
-      <UTextarea
-        v-model="surveyData.comments"
-        size="xl"
-        placeholder="Escribe aquí tus comentarios"
-      />
+      <UTextarea v-model="surveyData.comments" size="xl" placeholder="Escribe aquí tus comentarios" />
     </UFormGroup>
 
     <section class="mt-8 flex justify-end">
       <UButton
         :loading="loadingBtn"
         size="lg"
-        :label="
-          loadingBtn
-            ? surveyPageLabels.form.loading
-            : surveyPageLabels.form.button
-        "
+        :label="loadingBtn ? surveyPageLabels.form.loading : surveyPageLabels.form.button"
         icon="i-heroicons-paper-airplane"
         type="submit"
       />

@@ -16,7 +16,7 @@ const { navLinksLabels } = useI18n();
       </UContainer>
       <BottomNavbar :items="navLinksLabels" class="lg:hidden" />
 
-      <FeaturedEvent />
+      <!-- <FeaturedEvent /> -->
     </div>
   </main>
 </template>

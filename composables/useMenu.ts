@@ -3,6 +3,7 @@ import { allCategories, currentCategory } from '@/sanity/queries';
 export function useMenu() {
   const categories = ref<Category[]>([]);
   const category = ref<Category | null>(null);
+  const menu = ref<any>(null);
 
   const formatCategories = (categories: CategoryFromApi[]): Category[] => {
     return categories.map((category) => {
@@ -18,11 +19,14 @@ export function useMenu() {
     } as Category;
   };
 
+  // const getMenu = async () => {
+  //   const { data } = await useSanityQuery<CategoryFromApi[]>(allCategories);
+  //   categories.value = formatCategories(data.value as CategoryFromApi[]);
+  // };
   const getMenu = async () => {
-    const { data } = await useSanityQuery<CategoryFromApi[]>(allCategories);
-    categories.value = formatCategories(data.value as CategoryFromApi[]);
+    const { data } = await useFetch('/api/menu');
+    menu.value = data;
   };
-
   const getCurrentCategory = async (slug: string) => {
     const sanity = useSanity();
     const { data } = await useAsyncData(`${slug}`, () =>
@@ -34,5 +38,5 @@ export function useMenu() {
     }
   };
 
-  return { getMenu, categories, category, getCurrentCategory };
+  return { getMenu, menu, categories, category, getCurrentCategory };
 }
