@@ -31,7 +31,7 @@ const goToEvents = () => {
       <template #header>
         <div class="flex items-center justify-between gap-2">
           <h2 class="text-lg">Destacado</h2>
-          <UButton label="Cerrar" variant="ghost" icon="i-heroicons-x-mark" @click="eventModal = false" />
+          <UButton label="Cerrar" color="gray" variant="ghost" icon="i-heroicons-x-mark" @click="eventModal = false" />
         </div>
       </template>
 
