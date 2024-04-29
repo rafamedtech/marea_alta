@@ -1,4 +1,4 @@
-// import { allQuestions } from "@/sanity/queries";
+import { allQuestions } from '@/sanity/queries';
 import type { SurveyOutline, QuestionFromApi, QuestionOutline, SurveyWithQuestions } from '@/types/Survey';
 
 export function useSurvey() {
@@ -15,13 +15,13 @@ export function useSurvey() {
 
   const questions = ref<QuestionOutline[]>([]);
   const getQuestions = async () => {
-    // const { data } = await useSanityQuery<QuestionFromApi[]>(allQuestions);
-    // questions.value = data.value?.map((question) => {
-    //   return {
-    //     text: question.text,
-    //     rating: question.rating,
-    //   };
-    // }) as QuestionOutline[];
+    const { data } = await useSanityQuery<QuestionFromApi[]>(allQuestions);
+    questions.value = data.value?.map((question) => {
+      return {
+        text: question.text,
+        rating: question.rating,
+      };
+    }) as QuestionOutline[];
   };
 
   const getSurveys = async () => {

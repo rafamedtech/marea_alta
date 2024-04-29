@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// const store = useStore();
-// const { loadingScreen } = storeToRefs(store);
+const store = useStore();
+const { loadingScreen } = storeToRefs(store);
 </script>
 
 <template>
@@ -12,6 +12,6 @@
     <UModals />
     <UNotifications />
 
-    <!-- <Loader v-if="loadingScreen" /> -->
+    <Loader v-if="loadingScreen" />
   </section>
 </template>

@@ -36,7 +36,7 @@ useHead({
       </template>
 
       <template #content>
-        <section class="dark:text-base-100 text-dark-strong lg:mt-4">
+        <section class="lg:mt-4">
           <section class="md:mx-auto md:w-1/2">
             <UCard
               :ui="{
@@ -69,22 +69,22 @@ useHead({
                 class="flex flex-col items-center"
               >
                 <Icon :name="icon" size="32" />
-                <span class="text-dark-strong dark:text-gray-100">{{ name }}</span>
+                <span>{{ name }}</span>
               </NuxtLink>
             </section>
             <section class="py-8">
               <h3 class="font-bold">
                 {{ aboutPageLabels.address }}
-                <span class="block font-normal text-dark-strong dark:text-gray-100">{{ aboutInfo.address }}</span>
+                <span class="block font-normal">{{ aboutInfo.address }}</span>
               </h3>
               <h4 class="font-bold">
                 {{ aboutPageLabels.phone }}
-                <span class="block font-normal text-dark-strong dark:text-gray-100">{{ aboutInfo.phone }}</span>
+                <span class="block font-normal">{{ aboutInfo.phone }}</span>
               </h4>
             </section>
           </section>
 
-          <section class="my-4 dark:text-gray-100 md:mx-auto md:w-1/2">
+          <section class="my-4 md:mx-auto md:w-1/2">
             <h3 class="text-xl font-bold">
               {{ aboutPageLabels.schedule }}
             </h3>

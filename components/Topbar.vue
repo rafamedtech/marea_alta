@@ -5,8 +5,8 @@ const { admin = false } = defineProps<{
 }>();
 
 const user = useSupabaseUser();
-// const store = useStore();
-// const { language } = storeToRefs(store);
+const store = useStore();
+const { language } = storeToRefs(store);
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -18,7 +18,7 @@ const toggleFeedback = () => {
   modal.open(Feedback, {});
 };
 
-// const { changeLanguage } = useI18n();
+const { changeLanguage } = useI18n();
 function toggleLogout() {
   modal.open(LogoutModal, {});
 }
@@ -53,6 +53,13 @@ const items = computed<unknown>(() => {
     ],
   ];
 });
+
+const availableLanguages = [
+  { label: 'ES', value: 'es' },
+  { label: 'EN', value: 'en' },
+];
+
+const selectedLanguage = ref(availableLanguages.find((lang) => lang.value === language.value));
 </script>
 
 <template>
@@ -63,6 +70,7 @@ const items = computed<unknown>(() => {
 
     <section class="flex items-center gap-2">
       <ClientOnly>
+        <USelectMenu v-model="selectedLanguage" :options="availableLanguages" @change="changeLanguage()" />
         <UButton
           :icon="darkModeIcon"
           variant="ghost"
@@ -80,18 +88,6 @@ const items = computed<unknown>(() => {
           class="flex-1"
           @click="toggleDark()"
         />
-        <!-- <UButton
-          :label="language === 'es' ? 'EN' : 'ES'"
-          icon="i-heroicons-arrows-up-down-solid"
-          variant="ghost"
-          color="primary"
-          :ui="{
-            inline: 'flex-col',
-            rounded: 'rounded-xl',
-            color: { primary: { ghost: 'text-gray-200 hover:text-gray-200 hover:bg-gray-800' } },
-          }"
-          @click="changeLanguage"
-        /> -->
       </ClientOnly>
 
       <UDropdown
