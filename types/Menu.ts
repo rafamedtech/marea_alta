@@ -1,13 +1,13 @@
 type CategoryOutline = {
-  name: string;
-  description: string;
+  name: { en: string; es: string };
+  description: { en: string; es: string };
   slug: string;
   cover: string;
 };
 type Category = CategoryOutline & {
   id: string;
   createdAt: Date;
-  sections: Section[];
+  items: Item[];
 };
 
 type CategoryFromApi = CategoryOutline & {
@@ -19,22 +19,21 @@ type CategoryFromApi = CategoryOutline & {
 type Section = {
   _id: string;
   _createdAt: Date;
-  name: string;
-  description: string;
+  name: { en: string; es: string };
+  description: { en: string; es: string };
   slug: string;
   cover: string;
   items: Item[];
 };
 
 type Item = {
-  _id: string;
-  _createdAt: Date;
-  name: string;
-  description: string;
-  price: number;
-  slug: string;
-  cover: string;
-  variants?: Variant[];
+  id: string;
+  createdAt?: Date;
+  name: { en: string; es: string };
+  description: { en: string; es: string };
+  prices: number[];
+  slug?: string;
+  cover?: string;
 };
 
 type Variant = {

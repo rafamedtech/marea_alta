@@ -11,39 +11,41 @@ const handleScroll = () => {
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth",
+    behavior: 'smooth',
   });
 };
 
 const { scrollToTopLabels } = useI18n();
 
 onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
+  window.addEventListener('scroll', handleScroll);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("scroll", handleScroll);
+  window.removeEventListener('scroll', handleScroll);
 });
 </script>
 
 <template>
   <section
-    class="text-primary bg-primary fixed bottom-[5.5rem] right-4 z-[49] flex flex-row rounded-xl shadow-md lg:bottom-8 lg:right-8"
+    class="text-primary fixed bottom-[5.5rem] right-4 z-[49] flex gap-2 flex-row rounded-xl lg:bottom-8 lg:right-8"
   >
     <UButton
       v-if="showScrollToTop"
       :label="scrollToTopLabels.scrollToTop"
       icon="i-heroicons-arrow-small-up"
-      class="text-white"
       :ui="{ inline: 'flex-col', rounded: 'rounded-xl' }"
+      class="min-w-16"
+      color="white"
       @click="scrollToTop"
     />
     <UButton
       :label="scrollToTopLabels.back"
       icon="i-heroicons-arrow-small-left"
-      class="text-white"
-      @click="navigateTo(backLink)"
       :ui="{ inline: 'flex-col', rounded: 'rounded-xl' }"
+      class="min-w-16"
+      color="white"
+      @click="navigateTo(backLink)"
     />
   </section>
 </template>

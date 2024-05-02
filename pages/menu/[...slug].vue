@@ -12,7 +12,7 @@ const [slug] = params.slug;
 // const currentCategory = category.value as Category;
 
 const { data: menu } = await useFetch('/api/menu');
-const currentCategory = menu.value?.find((category) => category.slug === slug);
+const currentCategory = menu.value?.find((category) => category.slug === slug) ?? ({} as Category);
 
 const columns = ref(1);
 
@@ -21,7 +21,7 @@ onMounted(() => {
 });
 
 useHead({
-  title: currentCategory?.name,
+  title: currentCategory?.name.es,
   meta: [
     {
       name: 'description',

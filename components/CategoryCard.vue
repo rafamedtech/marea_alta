@@ -10,6 +10,10 @@ interface Props {
 const { category, titleSize, link } = defineProps<Props>();
 
 const { name, cover, slug } = toRefs(category);
+
+const store = useStore();
+const { language } = storeToRefs(store);
+const categoryTitle = computed(() => (language.value === 'es' ? name.value.es : name.value.en));
 </script>
 
 <template>
@@ -41,7 +45,7 @@ const { name, cover, slug } = toRefs(category);
             'text-3xl lg:text-4xl': titleSize === 'large',
           }"
         >
-          {{ name }}
+          {{ categoryTitle }}
         </span>
       </section>
     </UCard>

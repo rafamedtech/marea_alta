@@ -23,7 +23,7 @@ function toggleLogout() {
   modal.open(LogoutModal, {});
 }
 
-const items = computed<unknown>(() => {
+const items = computed(() => {
   return [
     [
       {
@@ -50,7 +50,7 @@ const items = computed<unknown>(() => {
           toggleFeedback();
         },
       },
-    ],
+    ] as NavLink[],
   ];
 });
 
@@ -70,7 +70,12 @@ const selectedLanguage = ref(availableLanguages.find((lang) => lang.value === la
 
     <section class="flex items-center gap-2">
       <ClientOnly>
-        <USelectMenu v-model="selectedLanguage" :options="availableLanguages" @change="changeLanguage()" />
+        <USelectMenu
+          v-model="selectedLanguage"
+          :options="availableLanguages"
+          @change="changeLanguage()"
+          class="text-gray-200"
+        />
         <UButton
           :icon="darkModeIcon"
           variant="ghost"

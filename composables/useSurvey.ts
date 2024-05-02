@@ -3,12 +3,14 @@ import type { SurveyOutline, QuestionFromApi, QuestionOutline, SurveyWithQuestio
 
 export function useSurvey() {
   const toast = useToast();
+  const store = useStore();
+  const { language } = storeToRefs(store);
 
   const surveys = ref<SurveyWithQuestions[]>([]);
   const surveyData = reactive<SurveyOutline>({
     name: '',
     email: '',
-    waiter: 'No lo sé',
+    waiter: language.value === 'es' ? 'No lo sé' : "I don't know",
     comments: '',
     new: true,
   });

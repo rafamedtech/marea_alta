@@ -1,6 +1,4 @@
-export const waitersList = ['No lo sé', 'Diego Vargas', 'Giovanny Gómez', 'Christian Pérez'];
-
-export const surveyQuestions: Question[] = [
+export const surveyQuestions = [
   {
     id: 1,
     text: 'La bienvenida por parte de nuestro mesero',

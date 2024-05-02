@@ -1,20 +1,7 @@
 <script setup lang="ts">
-const store = useStore();
-const { isLoading } = storeToRefs(store);
-
-// const { menu, getMenu } = useMenu();
-// const { categories, getMenu } = useMenu();
-
 const { menuPageLabels } = useI18n();
 
-// await getMenu();
-
-const { data: menu } = await useFetch('/api/menu');
-
-onMounted(() => {
-  isLoading.value = false;
-  console.log(menu.value);
-});
+const { data: menu, pending } = await useFetch('/api/menu');
 
 useHead({
   title: menuPageLabels.value.title,
@@ -50,19 +37,14 @@ useHead({
 
 <template>
   <main>
-    <MainSection :loading="isLoading" padded>
+    <MainSection :loading="pending" padded>
       <template #heading>
         <AppHeading title="Menú" />
       </template>
 
       <template #content>
         <section class="grid gap-6 md:grid-cols-2 md:gap-8 md:px-2 md:pt-4">
-          <!-- <CategoryCard v-for="category in categories" :key="category.id" :category="category" link rounded /> -->
-          <NuxtLink v-for="category in menu" :key="category.slug" :to="`/menu/${category.slug}`">
-            <UCard>
-              {{ category.name }}
-            </UCard>
-          </NuxtLink>
+          <CategoryCard v-for="category in menu" :key="category.name.es" :category="category" link rounded />
         </section>
       </template>
     </MainSection>

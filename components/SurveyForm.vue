@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { SurveyModal } from '#components';
-import { waitersList } from '@/utils/surveyInfo';
+
 import type { FormSubmitEvent } from '#ui/types';
 
-const { surveyPageLabels } = useI18n();
+const { surveyPageLabels, waitersList } = useI18n();
+
+const placeholders = computed(() => surveyPageLabels.value.form.placeholders);
 
 const { surveyData, getQuestions, questions, sendSurvey, sendEmail } = useSurvey();
 await getQuestions();
@@ -30,10 +32,10 @@ const ratings = [1, 2, 3, 4, 5];
   <UForm :state="surveyData" class="mx-auto max-w-md" @submit="onSubmit">
     <article class="flex flex-col gap-4">
       <UFormGroup :label="surveyPageLabels.form.name">
-        <UInput size="xl" v-model="surveyData.name" placeholder="Escribe aquí" />
+        <UInput size="xl" v-model="surveyData.name" :placeholder="placeholders.name" />
       </UFormGroup>
       <UFormGroup :label="surveyPageLabels.form.email">
-        <UInput size="xl" type="email" v-model="surveyData.email" placeholder="ejemplo@correo.com" />
+        <UInput size="xl" type="email" v-model="surveyData.email" :placeholder="placeholders.email" />
       </UFormGroup>
       <UFormGroup :label="surveyPageLabels.form.waiter">
         <USelectMenu
@@ -66,7 +68,7 @@ const ratings = [1, 2, 3, 4, 5];
     </section>
 
     <UFormGroup :label="surveyPageLabels.form.comments">
-      <UTextarea v-model="surveyData.comments" size="xl" placeholder="Escribe aquí tus comentarios" />
+      <UTextarea v-model="surveyData.comments" size="xl" :placeholder="placeholders.comments" />
     </UFormGroup>
 
     <section class="mt-8 flex justify-end">

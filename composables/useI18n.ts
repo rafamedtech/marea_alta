@@ -32,6 +32,11 @@ export function useI18n() {
             comments: 'Comentarios',
             button: 'Enviar',
             loading: 'Enviando',
+            placeholders: {
+              name: 'Escribe tu nombre',
+              email: 'Escribe tu correo electrónico',
+              comments: 'Escribe tus comentarios',
+            },
           },
           done: '¡Encuesta Enviada!',
           modalTitle: '¡Gracias por tu opinión!',
@@ -48,6 +53,11 @@ export function useI18n() {
             comments: 'Comments',
             button: 'Send',
             loading: 'Sending',
+            placeholders: {
+              name: 'Your name here',
+              email: 'Your email here',
+              comments: 'Write your comments here',
+            },
           },
           done: 'Survey Completed!',
           modalTitle: 'Thanks for your opinion!',
@@ -55,6 +65,13 @@ export function useI18n() {
           exit: 'Exit',
         };
   });
+
+  const waitersList = computed(() => [
+    language.value === 'es' ? 'No lo sé' : "I don't know",
+    'Diego Vargas',
+    'Giovanny Gómez',
+    'Christian Pérez',
+  ]);
 
   const eventsPageLabels = computed(() => {
     return language.value === 'es'
@@ -141,5 +158,6 @@ export function useI18n() {
     eventsPageLabels,
     scrollToTopLabels,
     navLinksLabels,
+    waitersList,
   };
 }
