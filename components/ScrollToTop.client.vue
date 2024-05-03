@@ -34,7 +34,7 @@ onBeforeUnmount(() => {
       v-if="showScrollToTop"
       :label="scrollToTopLabels.scrollToTop"
       icon="i-heroicons-arrow-small-up"
-      :ui="{ inline: 'flex-col', rounded: 'rounded-xl' }"
+      :ui="{ inline: 'flex-col', rounded: 'rounded-none' }"
       class="min-w-16"
       color="white"
       @click="scrollToTop"
@@ -42,7 +42,7 @@ onBeforeUnmount(() => {
     <UButton
       :label="scrollToTopLabels.back"
       icon="i-heroicons-arrow-small-left"
-      :ui="{ inline: 'flex-col', rounded: 'rounded-xl' }"
+      :ui="{ inline: 'flex-col', rounded: 'rounded-none' }"
       class="min-w-16"
       color="white"
       @click="navigateTo(backLink)"

@@ -1,12 +1,5 @@
 <script setup lang="ts">
-const store = useStore();
-const { isLoading } = storeToRefs(store);
-
 const { surveyPageLabels } = useI18n();
-
-onMounted(() => {
-  isLoading.value = false;
-});
 
 const { getQuestions } = useSurvey();
 await getQuestions();
@@ -15,7 +8,7 @@ useHead({
   title: surveyPageLabels.value.title,
   meta: [
     {
-      name: "description",
+      name: 'description',
       content: surveyPageLabels.value.description,
     },
   ],
@@ -24,19 +17,10 @@ useHead({
 
 <template>
   <main>
-    <MainSection :loading="isLoading" padded>
-      <template #heading>
-        <AppHeading
-          :title="surveyPageLabels.title"
-          :description="surveyPageLabels.description"
-        />
-      </template>
+    <AppHeading :title="surveyPageLabels.title" :description="surveyPageLabels.description" />
 
-      <template #content>
-        <section>
-          <SurveyForm />
-        </section>
-      </template>
-    </MainSection>
+    <section class="pb-24 pt-8">
+      <SurveyForm />
+    </section>
   </main>
 </template>

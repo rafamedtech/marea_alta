@@ -7,19 +7,12 @@ const { padded = true } = defineProps<{
 
 <template>
   <section class="min-h-dvh w-full">
-    <section :class="{ 'pt-4': !padded, 'pt-8': padded }">
+    <section :class="{ 'p-0': !padded, 'pt-8 px-4': padded }">
       <slot name="heading"></slot>
     </section>
 
-    <div
-      v-if="loading"
-      class="flex h-[70vh] w-full items-center justify-center"
-    >
-      <Icon
-        name="icon-park-outline:loading-four"
-        size="48"
-        class="animate-spin"
-      />
+    <div v-if="loading" class="flex h-[70vh] w-full items-center justify-center">
+      <Icon name="icon-park-outline:loading-four" size="48" class="animate-spin" />
     </div>
 
     <section class="pb-24 pt-8" v-else>

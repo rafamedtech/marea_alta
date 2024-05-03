@@ -7,7 +7,7 @@ interface Props {
   wide?: boolean;
 }
 
-const { category, titleSize, link } = defineProps<Props>();
+const { category, titleSize, link, rounded = false } = defineProps<Props>();
 
 const { name, cover, slug } = toRefs(category);
 
@@ -19,8 +19,8 @@ const categoryTitle = computed(() => (language.value === 'es' ? name.value.es : 
 <template>
   <NuxtLink
     :to="`/menu/${slug}`"
-    class="w-full transition-all hover:scale-95 focus:scale-95 focus:rounded-xl focus:ring-4 focus:ring-primary"
-    :class="{ 'pointer-events-none': !link }"
+    class="w-full transition-all group hover:scale-95 md:hover:scale-100 md:hover:ring-primary focus:scale-95 md:focus:scale-100 focus:ring-4 focus:ring-primary"
+    :class="{ 'pointer-events-none': !link, 'focus:rounded-xl rounded-xl': rounded }"
   >
     <UCard
       :ui="{
@@ -28,10 +28,11 @@ const categoryTitle = computed(() => (language.value === 'es' ? name.value.es : 
         body: { padding: 'px-0 py-0 sm:p-0' },
         rounded: rounded ? 'rounded-xl' : 'rounded-none',
       }"
+      class="overflow-hidden"
     >
       <img
         :src="cover"
-        class="h-36 w-full min-w-full object-cover brightness-75 dark:brightness-50 md:h-52"
+        class="h-36 w-full min-w-full object-cover brightness-75 transition-all md:group-focus:scale-110 md:group-hover:scale-110 dark:brightness-50 md:h-52"
         :class="{ 'rounded-xl': rounded }"
         alt=""
       />

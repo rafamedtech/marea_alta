@@ -74,7 +74,12 @@ const selectedLanguage = ref(availableLanguages.find((lang) => lang.value === la
           v-model="selectedLanguage"
           :options="availableLanguages"
           @change="changeLanguage()"
-          class="text-gray-200"
+          class="text-gray-200 forced-rounded-none"
+          :ui="{
+            rounded: 'rounded-none',
+            option: { rounded: 'rounded-sm' },
+            arrow: { rounded: 'rounded-none' },
+          }"
         />
         <UButton
           :icon="darkModeIcon"

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const { menuPageLabels } = useI18n();
 
-const { data: menu, pending } = await useFetch('/api/menu');
+const { data: menu } = await useFetch('/api/menu');
 
 useHead({
-  title: menuPageLabels.value.title,
+  title: `${menuPageLabels.value.title} | ${menuPageLabels.value.description}`,
   meta: [
     {
       name: 'description',
@@ -37,16 +37,10 @@ useHead({
 
 <template>
   <main>
-    <MainSection :loading="pending" padded>
-      <template #heading>
-        <AppHeading title="Menú" />
-      </template>
+    <AppHeading :title="menuPageLabels.header" />
 
-      <template #content>
-        <section class="grid gap-6 md:grid-cols-2 md:gap-8 md:px-2 md:pt-4">
-          <CategoryCard v-for="category in menu" :key="category.name.es" :category="category" link rounded />
-        </section>
-      </template>
-    </MainSection>
+    <section class="grid gap-6 md:grid-cols-2 md:gap-8 md:px-2 md:pt-4 pb-24 pt-8">
+      <CategoryCard v-for="category in menu" :key="category.name.es" :category="category" link padded />
+    </section>
   </main>
 </template>

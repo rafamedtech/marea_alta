@@ -4,7 +4,7 @@ const { loadingScreen } = storeToRefs(store);
 </script>
 
 <template>
-  <section>
+  <section class="relative max-h-dvh">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

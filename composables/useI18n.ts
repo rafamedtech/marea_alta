@@ -88,15 +88,11 @@ export function useI18n() {
   });
 
   const menuPageLabels = computed(() => {
-    return language.value === 'es'
-      ? {
-          title: 'Brunette Kitchen & Drinks | Menú 📖',
-          description: 'Conoce nuestros deliciosos platillos y mixología',
-        }
-      : {
-          title: 'Brunette Kitchen & Drinks | Menu 📖',
-          description: 'Discover our delicious dishes and mixology',
-        };
+    return {
+      title: 'Marea alta',
+      header: language.value === 'es' ? 'Nuestro menú' : 'Our menu',
+      description: 'Fresh food',
+    };
   });
 
   const scrollToTopLabels = computed(() => {

@@ -27,6 +27,12 @@ input {
   }
 }
 
+@layer utilities {
+  .forced-rounded-none .z-20 div ul {
+    @apply rounded-none;
+  }
+}
+
 .page-enter-from {
   opacity: 0;
   transform: translateX(15px);
