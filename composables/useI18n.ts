@@ -116,11 +116,11 @@ export function useI18n() {
         icon: 'i-heroicons-clipboard-document-list-solid',
         to: '/menu',
       },
-      {
-        label: language.value === 'es' ? 'Eventos' : 'Events',
-        icon: 'i-heroicons-calendar-days-solid',
-        to: '/eventos',
-      },
+      // {
+      //   label: language.value === 'es' ? 'Eventos' : 'Events',
+      //   icon: 'i-heroicons-calendar-days-solid',
+      //   to: '/eventos',
+      // },
       {
         label: language.value === 'es' ? 'Encuesta' : 'Survey',
         icon: 'i-heroicons-clipboard-document-check-solid',

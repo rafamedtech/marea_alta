@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// const { navLinksLabels } = useI18n();
 const { items } = defineProps<{ items: NavLink[] | NavLink[][] }>();
 </script>
 
