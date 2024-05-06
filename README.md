@@ -6,8 +6,9 @@
 [x] Hide events functionality
 [x] Translate surveyQuestions
 [x] Fix rounded button
+[x] Language modal on loading
 [] Fix reactive selected language
-[] Language modal on loading
 [] Setup database
 [] Send survey to database
+[] Fix metadata
 []

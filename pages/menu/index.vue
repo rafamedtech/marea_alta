@@ -17,11 +17,11 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://brunette.com.mx/',
+      content: 'https://mareaalta.netlify.app',
     },
     {
       property: 'og:title',
-      content: 'Brunette Kitchen & Drinks | Menú 📖',
+      content: 'Marea Alta - Fresh food | Menú 📖',
     },
     {
       property: 'og:description',
