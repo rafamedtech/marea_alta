@@ -68,6 +68,45 @@ export function useI18n() {
         };
   });
 
+  const surveyQuestions = computed(() => {
+    return [
+      {
+        id: 1,
+        text:
+          language.value === 'es'
+            ? 'La bienvenida por parte de nuestro mesero'
+            : 'The welcome from our waiter/waitress',
+        rating: 5,
+      },
+      {
+        id: 2,
+        text:
+          language.value === 'es'
+            ? 'La calidad y temperatura de los alimentos'
+            : 'The quality and temperature of the food',
+        rating: 5,
+      },
+      {
+        id: 3,
+        text: language.value === 'es' ? 'La calidad de sus bebidas' : 'The quality of your drinks',
+        rating: 5,
+      },
+      {
+        id: 4,
+        text: language.value === 'es' ? 'La limpieza del restaurante' : 'The cleanliness of the restaurant',
+        rating: 5,
+      },
+      {
+        id: 5,
+        text:
+          language.value === 'es'
+            ? '¿Cómo califica nuestro servicio en general?'
+            : 'How do you rate our service in general?',
+        rating: 5,
+      },
+    ];
+  });
+
   const waitersList = computed(() => [
     language.value === 'es' ? 'No lo sé' : "I don't know",
     'Diego Vargas',
@@ -153,6 +192,7 @@ export function useI18n() {
     menuPageLabels,
     aboutPageLabels,
     surveyPageLabels,
+    surveyQuestions,
     eventsPageLabels,
     scrollToTopLabels,
     navLinksLabels,

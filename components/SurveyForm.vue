@@ -3,7 +3,7 @@ import { SurveyModal } from '#components';
 
 import type { FormSubmitEvent } from '#ui/types';
 
-const { surveyPageLabels, waitersList } = useI18n();
+const { surveyPageLabels, surveyQuestions, waitersList } = useI18n();
 
 const placeholders = computed(() => surveyPageLabels.value.form.placeholders);
 
