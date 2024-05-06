@@ -16,15 +16,15 @@ export function useSurvey() {
   });
 
   const questions = ref<QuestionOutline[]>([]);
-  const getQuestions = async () => {
-    const { data } = await useSanityQuery<QuestionFromApi[]>(allQuestions);
-    questions.value = data.value?.map((question) => {
-      return {
-        text: question.text,
-        rating: question.rating,
-      };
-    }) as QuestionOutline[];
-  };
+  // const getQuestions = async () => {
+  //   const { data } = await useSanityQuery<QuestionFromApi[]>(allQuestions);
+  //   questions.value = data.value?.map((question) => {
+  //     return {
+  //       text: question.text,
+  //       rating: question.rating,
+  //     };
+  //   }) as QuestionOutline[];
+  // };
 
   const getSurveys = async () => {
     // Get surveys from the API
@@ -102,7 +102,7 @@ export function useSurvey() {
   });
 
   return {
-    getQuestions,
+    // getQuestions,
     getSurveys,
     sendSurvey,
     sendEmail,
