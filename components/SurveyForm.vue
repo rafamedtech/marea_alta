@@ -87,6 +87,7 @@ const ratings = [1, 2, 3, 4, 5];
         :label="loadingBtn ? surveyPageLabels.form.loading : surveyPageLabels.form.button"
         icon="i-heroicons-paper-airplane"
         type="submit"
+        :ui="{ rounded: '' }"
       />
     </section>
   </UForm>
