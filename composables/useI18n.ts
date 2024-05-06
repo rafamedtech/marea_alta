@@ -173,22 +173,33 @@ export function useI18n() {
     ];
   });
 
+  const availableLanguages = [
+    { label: 'ES', value: 'es' },
+    { label: 'EN', value: 'en' },
+  ];
+
   const changeLanguage = () => {
     loadingScreen.value = true;
 
     setTimeout(() => {
       if (language.value === 'es') {
         language.value = 'en';
+        selectedLanguage.value = availableLanguages.find((lang) => lang.value === 'en');
       } else {
         language.value = 'es';
+        selectedLanguage.value = availableLanguages.find((lang) => lang.value === 'es');
       }
 
       loadingScreen.value = false;
     }, 1000);
   };
 
+  const selectedLanguage = ref(availableLanguages.find((lang) => lang.value === language.value));
+
   return {
     changeLanguage,
+    availableLanguages,
+    selectedLanguage,
     menuPageLabels,
     aboutPageLabels,
     surveyPageLabels,

@@ -18,7 +18,7 @@ const toggleFeedback = () => {
   modal.open(Feedback, {});
 };
 
-const { changeLanguage } = useI18n();
+const { changeLanguage, availableLanguages, selectedLanguage } = useI18n();
 function toggleLogout() {
   modal.open(LogoutModal, {});
 }
@@ -54,12 +54,7 @@ const items = computed(() => {
   ];
 });
 
-const availableLanguages = [
-  { label: 'ES', value: 'es' },
-  { label: 'EN', value: 'en' },
-];
-
-const selectedLanguage = ref(availableLanguages.find((lang) => lang.value === language.value));
+// const selectedLanguage = ref(availableLanguages.find((lang) => lang.value === language.value));
 </script>
 
 <template>

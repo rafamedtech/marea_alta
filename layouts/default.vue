@@ -18,7 +18,7 @@ const { navLinksLabels } = useI18n();
 
       <BottomNavbar :items="navLinksLabels" class="lg:hidden" />
 
-      <!-- <FeaturedEvent /> -->
+      <LanguageModal />
     </div>
   </main>
 </template>

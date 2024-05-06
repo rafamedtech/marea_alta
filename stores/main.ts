@@ -11,6 +11,7 @@ export const useStore = defineStore('main', () => {
 
   return {
     language,
+
     isLoading,
     loadingScreen,
     eventModal,

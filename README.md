@@ -5,7 +5,9 @@
 [x] Fix questions in Encuesta
 [x] Hide events functionality
 [x] Translate surveyQuestions
-[] Fix rounded button
+[x] Fix rounded button
+[] Fix reactive selected language
+[] Language modal on loading
 [] Setup database
 [] Send survey to database
 []
