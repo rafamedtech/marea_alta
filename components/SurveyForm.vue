@@ -7,13 +7,13 @@ const { surveyPageLabels, waitersList } = useI18n();
 
 const placeholders = computed(() => surveyPageLabels.value.form.placeholders);
 
-const { surveyData, getQuestions, questions, sendSurvey, sendEmail } = useSurvey();
-await getQuestions();
+const { surveyData, sendSurvey, sendEmail } = useSurvey();
+// await getQuestions();
 
 const modal = useModal();
 const loadingBtn = ref(false);
 async function onSubmit(event: FormSubmitEvent<any>) {
-  const survey = { ...event.data, questions: questions.value };
+  const survey = { ...event.data, questions: surveyQuestions };
 
   loadingBtn.value = true;
 
@@ -58,7 +58,7 @@ const ratings = [1, 2, 3, 4, 5];
 
     <section class="my-12 flex flex-col gap-4">
       <article
-        v-for="question in questions"
+        v-for="question in surveyQuestions"
         class="flex items-center gap-4 border-b border-gray-300 pb-6 dark:border-gray-600 md:flex-row md:items-center md:gap-2"
       >
         <h3 class="flex-1">{{ question.text }}</h3>
