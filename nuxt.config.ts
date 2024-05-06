@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@pinia/nuxt', '@nuxt/ui', '@vueuse/nuxt', '@nuxtjs/supabase', '@nuxtjs/sanity'],
+  modules: ['@pinia/nuxt', '@nuxt/ui', '@vueuse/nuxt', '@nuxtjs/supabase'],
 
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -14,11 +14,6 @@ export default defineNuxtConfig({
         },
       ],
     },
-  },
-
-  sanity: {
-    projectId: 'voo7gajt',
-    dataset: 'production',
   },
 
   supabase: {

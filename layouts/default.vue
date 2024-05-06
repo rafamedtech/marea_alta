@@ -15,8 +15,7 @@ const { navLinksLabels } = useI18n();
       <UContainer class="min-h-screen bg-gray-100 transition-colors dark:bg-neutral-900 lg:relative lg:px-12">
         <slot> </slot>
       </UContainer>
-      <!-- <UButton icon="i-heroicons-bars-3-bottom-right-solid" class="fixed z-[49] bottom-4 right-4" /> -->
-      <!-- <Icon name="heroicons:bars-3-bottom-right-solid" class="absolute bottom-4 right-4" /> -->
+
       <BottomNavbar :items="navLinksLabels" class="lg:hidden" />
 
       <!-- <FeaturedEvent /> -->

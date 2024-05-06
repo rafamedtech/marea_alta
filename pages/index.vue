@@ -52,6 +52,7 @@ useHead({
             <p class="pb-8">{{ aboutInfo.description }}</p>
           </section>
         </UCard>
+
         <section class="mt-8 flex justify-center gap-4">
           <NuxtLink
             v-for="{ id, name, icon, url } in aboutInfo.socials"

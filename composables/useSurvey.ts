@@ -10,7 +10,7 @@ export function useSurvey() {
   const surveyData = reactive<SurveyOutline>({
     name: '',
     email: '',
-    waiter: language.value === 'es' ? 'No lo sé' : "I don't know",
+    waiter: '',
     comments: '',
     new: true,
   });

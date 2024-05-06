@@ -35,6 +35,7 @@ export function useI18n() {
             placeholders: {
               name: 'Escribe tu nombre',
               email: 'Escribe tu correo electrónico',
+              waiter: 'Selecciona tu mesero',
               comments: 'Escribe tus comentarios',
             },
           },
@@ -56,6 +57,7 @@ export function useI18n() {
             placeholders: {
               name: 'Your name here',
               email: 'Your email here',
+              waiter: 'Select your waiter',
               comments: 'Write your comments here',
             },
           },

@@ -32,10 +32,16 @@ const ratings = [1, 2, 3, 4, 5];
   <UForm :state="surveyData" class="mx-auto max-w-md" @submit="onSubmit">
     <article class="flex flex-col gap-4">
       <UFormGroup :label="surveyPageLabels.form.name">
-        <UInput size="xl" v-model="surveyData.name" :placeholder="placeholders.name" />
+        <UInput size="xl" v-model="surveyData.name" :placeholder="placeholders.name" :ui="{ rounded: '' }" />
       </UFormGroup>
       <UFormGroup :label="surveyPageLabels.form.email">
-        <UInput size="xl" type="email" v-model="surveyData.email" :placeholder="placeholders.email" />
+        <UInput
+          size="xl"
+          type="email"
+          v-model="surveyData.email"
+          :placeholder="placeholders.email"
+          :ui="{ rounded: '' }"
+        />
       </UFormGroup>
       <UFormGroup :label="surveyPageLabels.form.waiter">
         <USelectMenu
@@ -43,7 +49,9 @@ const ratings = [1, 2, 3, 4, 5];
           :options="waitersList"
           size="xl"
           color="white"
-          :ui="{ color: { gray: { outline: 'dark:bg-dark-strong' } } }"
+          :ui="{ color: { gray: { outline: 'dark:bg-dark-strong' } }, rounded: '' }"
+          :placeholder="placeholders.waiter"
+          required
         />
       </UFormGroup>
     </article>
@@ -60,7 +68,8 @@ const ratings = [1, 2, 3, 4, 5];
             v-model="question.rating"
             size="xl"
             color="white"
-            :ui="{ color: { gray: { outline: 'dark:bg-dark-strong' } } }"
+            :ui="{ color: { gray: { outline: 'dark:bg-dark-strong' } }, rounded: '' }"
+            class="forced-rounded-none"
           />
           <Icon name="i-heroicons-star" size="32" class="text-primary" />
         </div>
@@ -68,7 +77,7 @@ const ratings = [1, 2, 3, 4, 5];
     </section>
 
     <UFormGroup :label="surveyPageLabels.form.comments">
-      <UTextarea v-model="surveyData.comments" size="xl" :placeholder="placeholders.comments" />
+      <UTextarea v-model="surveyData.comments" size="xl" :placeholder="placeholders.comments" :ui="{ rounded: '' }" />
     </UFormGroup>
 
     <section class="mt-8 flex justify-end">
