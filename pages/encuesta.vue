@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const { surveyPageLabels } = useI18n();
 
-const { getQuestions } = useSurvey();
-await getQuestions();
+// const { getQuestions } = useSurvey();
+// await getQuestions();
 
 useHead({
   title: surveyPageLabels.value.title,

@@ -6,7 +6,8 @@ const modal = useModal();
 const store = useStore();
 const { isLoading } = storeToRefs(store);
 
-const { data: events } = useSanityQuery<Evento[]>(allEvents);
+// const { data: events } = useSanityQuery<Evento[]>(allEvents);
+const events = ref<Evento[] | null>(null);
 
 const { eventsPageLabels } = useI18n();
 
