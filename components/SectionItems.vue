@@ -22,7 +22,7 @@ const { language } = storeToRefs(store);
     >
       <div class="flex items-center justify-between gap-4 md:flex-col md:items-stretch md:gap-2">
         <section>
-          <h4 class="text-base font-bold">
+          <h4 class="text-lg font-bold">
             {{ language === 'es' ? item.name.es : item.name.en }}
           </h4>
 
