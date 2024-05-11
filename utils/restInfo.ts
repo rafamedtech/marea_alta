@@ -92,7 +92,7 @@ export const restInfo = {
         id: 2,
         name: 'Instagram',
         icon: 'icon-park-outline:instagram',
-        url: 'https://www.instagram.com/brunette.realdelmar/',
+        url: 'https://www.instagram.com/mareaaltafresh/',
       },
     ],
   },
