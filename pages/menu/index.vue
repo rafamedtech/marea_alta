@@ -17,7 +17,7 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://mareaalta.netlify.app',
+      content: 'https://mareaalta.netlify.app/menu',
     },
     {
       property: 'og:title',
@@ -29,7 +29,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: 'https://res.cloudinary.com/rafamed-dev/image/upload/v1705703429/menu/OG_Image_cl4k6w.png',
+      content: 'https://res.cloudinary.com/rafamed-dev/image/upload/v1715461267/menus/marea_alta/logo-cover_kqhb6y.png',
     },
   ],
 });

@@ -130,9 +130,9 @@ export function useI18n() {
 
   const menuPageLabels = computed(() => {
     return {
-      title: 'Marea alta',
+      title: 'Marea Alta',
       header: language.value === 'es' ? 'Nuestro menú' : 'Our menu',
-      description: 'Fresh food',
+      description: 'Fresh Food',
     };
   });
 

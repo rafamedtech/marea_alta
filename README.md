@@ -7,8 +7,8 @@
 [x] Translate surveyQuestions
 [x] Fix rounded button
 [x] Language modal on loading
+[] Fix metadata
 [] Fix reactive selected language
 [] Setup database
 [] Send survey to database
-[] Fix metadata
 []
