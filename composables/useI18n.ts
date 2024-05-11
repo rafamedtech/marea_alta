@@ -42,7 +42,7 @@ export function useI18n() {
           done: '¡Encuesta Enviada!',
           modalTitle: '¡Gracias por tu opinión!',
           modalDescription: 'Con tus comentarios podemos mejorar nuestros productos y servicios',
-          exit: 'Salir',
+          exit: 'Cerrar',
         }
       : {
           title: 'Satisfaction survey',
@@ -64,7 +64,7 @@ export function useI18n() {
           done: 'Survey Completed!',
           modalTitle: 'Thanks for your opinion!',
           modalDescription: 'With your comments we can improve our products and services',
-          exit: 'Exit',
+          exit: 'Close',
         };
   });
 
