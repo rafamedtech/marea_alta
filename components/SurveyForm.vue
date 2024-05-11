@@ -12,6 +12,7 @@ const { surveyData, sendSurvey, sendEmail } = useSurvey();
 
 const modal = useModal();
 const loadingBtn = ref(false);
+
 async function onSubmit(event: FormSubmitEvent<any>) {
   const survey = { ...event.data, questions: surveyQuestions };
 

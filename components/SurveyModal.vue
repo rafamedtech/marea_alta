@@ -4,7 +4,7 @@ const { surveyPageLabels } = useI18n();
 const modal = useModal();
 function closeModal() {
   modal.close();
-  return navigateTo("/");
+  return navigateTo('/');
 }
 </script>
 
@@ -13,7 +13,7 @@ function closeModal() {
     prevent-close
     :ui="{
       wrapper: 'z-[999999]',
-      overlay: { background: 'bg-dark-medium/75 dark:bg-dark-medium/75' },
+      overlay: { background: 'bg-gray-800/75 dark:bg-gray-800/75' },
       rounded: 'rounded-xl',
     }"
   >
@@ -21,7 +21,7 @@ function closeModal() {
       :ui="{
         ring: '',
         divide: 'divide-y divide-gray-100 dark:divide-gray-800',
-        background: ' dark:bg-dark-strong',
+        background: 'dark:bg-gray-900',
         rounded: 'rounded-xl',
       }"
     >

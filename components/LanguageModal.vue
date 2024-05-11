@@ -25,7 +25,7 @@ function toggleLanguage() {
       :ui="{
         ring: '',
         divide: 'divide-y divide-gray-100 dark:divide-gray-800',
-        background: ' dark:bg-gray-900',
+        background: 'dark:bg-gray-900',
         rounded: 'rounded-xl',
       }"
     >
