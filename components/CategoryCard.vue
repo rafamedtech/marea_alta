@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Language } from '@/types/Enums';
 interface Props {
   category: Category | CategoryOutline;
   titleSize?: string;
@@ -13,7 +14,7 @@ const { name, cover, slug } = toRefs(category);
 
 const store = useStore();
 const { language } = storeToRefs(store);
-const categoryTitle = computed(() => (language.value === 'es' ? name.value.es : name.value.en));
+const categoryTitle = computed(() => (language.value === Language.Spanish ? name.value.es : name.value.en));
 </script>
 
 <template>
