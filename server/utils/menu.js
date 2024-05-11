@@ -104,7 +104,7 @@ export const menu = [
   },
   {
     name: {
-      es: 'Platillos fuertes',
+      es: 'Platos fuertes',
       en: 'Main dishes',
     },
     cover:

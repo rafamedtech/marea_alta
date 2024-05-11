@@ -1,9 +1,11 @@
+import { Language } from '@/types/Enums';
+
 export function useI18n() {
   const store = useStore();
   const { language, loadingScreen } = storeToRefs(store);
 
   const aboutPageLabels = computed(() => {
-    return language.value === 'es'
+    return language.value === Language.Spanish
       ? {
           title: 'Acerca del restaurant',
           description: 'Conoce más sobre nuestro restaurante',
@@ -21,7 +23,7 @@ export function useI18n() {
   });
 
   const surveyPageLabels = computed(() => {
-    return language.value === 'es'
+    return language.value === Language.Spanish
       ? {
           title: 'Encuesta de satisfacción',
           description: 'Agradecemos su opinión respondiendo unas preguntas',
@@ -73,7 +75,7 @@ export function useI18n() {
       {
         id: 1,
         text:
-          language.value === 'es'
+          language.value === Language.Spanish
             ? 'La bienvenida por parte de nuestro mesero'
             : 'The welcome from our waiter/waitress',
         rating: 5,
@@ -81,25 +83,25 @@ export function useI18n() {
       {
         id: 2,
         text:
-          language.value === 'es'
+          language.value === Language.Spanish
             ? 'La calidad y temperatura de los alimentos'
             : 'The quality and temperature of the food',
         rating: 5,
       },
       {
         id: 3,
-        text: language.value === 'es' ? 'La calidad de sus bebidas' : 'The quality of your drinks',
+        text: language.value === Language.Spanish ? 'La calidad de sus bebidas' : 'The quality of your drinks',
         rating: 5,
       },
       {
         id: 4,
-        text: language.value === 'es' ? 'La limpieza del restaurante' : 'The cleanliness of the restaurant',
+        text: language.value === Language.Spanish ? 'La limpieza del restaurante' : 'The cleanliness of the restaurant',
         rating: 5,
       },
       {
         id: 5,
         text:
-          language.value === 'es'
+          language.value === Language.Spanish
             ? '¿Cómo califica nuestro servicio en general?'
             : 'How do you rate our service in general?',
         rating: 5,
@@ -108,14 +110,14 @@ export function useI18n() {
   });
 
   const waitersList = computed(() => [
-    language.value === 'es' ? 'No lo sé' : "I don't know",
+    language.value === Language.Spanish ? 'No lo sé' : "I don't know",
     'Diego Vargas',
     'Giovanny Gómez',
     'Christian Pérez',
   ]);
 
   const eventsPageLabels = computed(() => {
-    return language.value === 'es'
+    return language.value === Language.Spanish
       ? {
           title: 'Eventos',
           description: 'Encuentra nuestros eventos y promociones',
@@ -131,13 +133,13 @@ export function useI18n() {
   const menuPageLabels = computed(() => {
     return {
       title: 'Marea Alta',
-      header: language.value === 'es' ? 'Nuestro menú' : 'Our menu',
+      header: language.value === Language.Spanish ? 'Nuestro menú' : 'Our menu',
       description: 'Fresh Food',
     };
   });
 
   const scrollToTopLabels = computed(() => {
-    return language.value === 'es'
+    return language.value === Language.Spanish
       ? {
           scrollToTop: 'Arriba',
           back: 'Atrás',
@@ -151,55 +153,39 @@ export function useI18n() {
   const navLinksLabels = computed<NavLink[]>(() => {
     return [
       {
-        label: language.value === 'es' ? 'Menú' : 'Menu',
+        label: language.value === Language.Spanish ? 'Menú' : 'Menu',
         icon: 'i-heroicons-clipboard-document-list-solid',
         to: '/menu',
       },
       // {
-      //   label: language.value === 'es' ? 'Eventos' : 'Events',
+      //   label: language.value === Language.Spanish ? 'Eventos' : 'Events',
       //   icon: 'i-heroicons-calendar-days-solid',
       //   to: '/eventos',
       // },
       {
-        label: language.value === 'es' ? 'Encuesta' : 'Survey',
+        label: language.value === Language.Spanish ? 'Encuesta' : 'Survey',
         icon: 'i-heroicons-clipboard-document-check-solid',
         to: '/encuesta',
       },
       {
-        label: language.value === 'es' ? 'Acerca de' : 'About',
+        label: language.value === Language.Spanish ? 'Acerca de' : 'About',
         icon: 'i-heroicons-building-storefront-solid',
         to: '/',
       },
     ];
   });
 
-  const availableLanguages = [
-    { label: 'ES', value: 'es' },
-    { label: 'EN', value: 'en' },
-  ];
-
-  const changeLanguage = () => {
+  const changeLanguage = (lang: Language) => {
     loadingScreen.value = true;
 
     setTimeout(() => {
-      if (language.value === 'es') {
-        language.value = 'en';
-        selectedLanguage.value = availableLanguages.find((lang) => lang.value === 'en');
-      } else {
-        language.value = 'es';
-        selectedLanguage.value = availableLanguages.find((lang) => lang.value === 'es');
-      }
-
+      language.value = lang;
       loadingScreen.value = false;
     }, 1000);
   };
 
-  const selectedLanguage = ref(availableLanguages.find((lang) => lang.value === language.value));
-
   return {
     changeLanguage,
-    availableLanguages,
-    selectedLanguage,
     menuPageLabels,
     aboutPageLabels,
     surveyPageLabels,

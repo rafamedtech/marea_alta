@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import { Language } from '@/types/Enums';
+
 const store = useStore();
 const { eventModal } = storeToRefs(store);
 
 const { changeLanguage } = useI18n();
 
 function toggleLanguage() {
-  changeLanguage();
+  changeLanguage(Language.English);
   eventModal.value = false;
 }
 </script>

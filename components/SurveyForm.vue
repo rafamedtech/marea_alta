@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { SurveyModal } from '#components';
-
 import type { FormSubmitEvent } from '#ui/types';
 
 const { surveyPageLabels, surveyQuestions, waitersList } = useI18n();
@@ -19,8 +18,10 @@ async function onSubmit(event: FormSubmitEvent<any>) {
   loadingBtn.value = true;
 
   setTimeout(async () => {
-    await sendSurvey(survey);
+    // await sendSurvey(survey);
     // await sendEmail();
+
+    console.log(survey);
     modal.open(SurveyModal, {});
     loadingBtn.value = false;
   }, 500);

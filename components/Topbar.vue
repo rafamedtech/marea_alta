@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { LogoutModal, Feedback } from '#components';
+import { Language } from '@/types/Enums';
+
 const { admin = false } = defineProps<{
   admin?: boolean;
 }>();
@@ -18,7 +20,7 @@ const toggleFeedback = () => {
   modal.open(Feedback, {});
 };
 
-const { changeLanguage, availableLanguages, selectedLanguage } = useI18n();
+const { changeLanguage } = useI18n();
 function toggleLogout() {
   modal.open(LogoutModal, {});
 }
@@ -54,7 +56,7 @@ const items = computed(() => {
   ];
 });
 
-// const selectedLanguage = ref(availableLanguages.find((lang) => lang.value === language.value));
+const availableLanguages = [Language.Spanish, Language.English];
 </script>
 
 <template>
@@ -66,14 +68,15 @@ const items = computed(() => {
     <section class="flex items-center gap-2">
       <ClientOnly>
         <USelectMenu
-          v-model="selectedLanguage"
+          v-model="language"
           :options="availableLanguages"
-          @change="changeLanguage()"
-          class="text-gray-200 forced-rounded-none"
+          @change="changeLanguage(language)"
+          class="text-gray-200 forced-rounded-none uppercase"
           :ui="{
             rounded: 'rounded-none',
             option: { rounded: 'rounded-sm' },
             arrow: { rounded: 'rounded-none' },
+            select: 'uppercase',
           }"
         />
         <UButton

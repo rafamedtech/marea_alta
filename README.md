@@ -8,7 +8,7 @@
 [x] Fix rounded button
 [x] Language modal on loading
 [x] Fix metadata
-[] Fix reactive selected language
+[x] Fix reactive selected language
 [] Setup database
 [] Send survey to database
 []
