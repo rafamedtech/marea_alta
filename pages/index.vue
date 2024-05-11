@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Language } from '@/types/Enums';
 import mainCover from '@/assets/img/portada.jpg';
 import { restInfo } from '@/utils/restInfo';
 
@@ -8,7 +9,7 @@ const { language } = storeToRefs(store);
 const isLoading = ref(true);
 
 const aboutInfo = computed(() => {
-  return language.value === 'es' ? restInfo.es : restInfo.en;
+  return language.value === Language.Spanish ? restInfo.es : restInfo.en;
 });
 
 const { aboutPageLabels } = useI18n();
