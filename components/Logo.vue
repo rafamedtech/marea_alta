@@ -5,7 +5,7 @@ const { logo } = restInfo;
 </script>
 
 <template>
-  <div class="flex items-center gap-2 rounded-lg">
+  <NuxtLink to="/" class="flex items-center gap-2 rounded-lg">
     <img :src="logo" alt="Restaurant logo" class="w-32" />
-  </div>
+  </NuxtLink>
 </template>
