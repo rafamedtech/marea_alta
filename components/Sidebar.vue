@@ -1,7 +1,16 @@
 <script setup lang="ts">
+import { Language } from '@/types/Enums';
+
 const { items } = defineProps<{
   items: NavLink[] | NavLink[][];
 }>();
+
+const store = useStore();
+const { language } = storeToRefs(store);
+
+const { changeLanguage } = useI18n();
+
+const availableLanguages = [Language.Spanish, Language.English];
 </script>
 
 <template>
@@ -19,7 +28,21 @@ const { items } = defineProps<{
             active: 'text-primary dark:text-primary',
             inactive: '',
           },
+          rounded: '',
         }"
+      />
+      <USelectMenu
+        v-model="language"
+        :options="availableLanguages"
+        @change="changeLanguage(language)"
+        class="text-gray-200 forced-rounded-none uppercase mt-4 w-fit px-2"
+        :ui="{
+          rounded: 'rounded-none',
+          option: { rounded: 'rounded-sm' },
+          arrow: { rounded: 'rounded-none' },
+          select: 'uppercase',
+        }"
+        :popper="{ placement: 'bottom-start' }"
       />
     </ClientOnly>
   </section>
