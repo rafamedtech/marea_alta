@@ -67,7 +67,7 @@ const availableLanguages = [Language.Spanish, Language.English];
 
     <section class="flex items-center gap-2">
       <ClientOnly>
-        <USelectMenu
+        <!-- <USelectMenu
           v-model="language"
           :options="availableLanguages"
           @change="changeLanguage(language)"
@@ -78,7 +78,7 @@ const availableLanguages = [Language.Spanish, Language.English];
             arrow: { rounded: 'rounded-none' },
             select: 'uppercase',
           }"
-        />
+        /> -->
         <UButton
           :icon="darkModeIcon"
           variant="ghost"
