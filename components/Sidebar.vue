@@ -31,7 +31,7 @@ const availableLanguages = [Language.Spanish, Language.English];
           rounded: '',
         }"
       />
-      <USelectMenu
+      <!-- <USelectMenu
         v-model="language"
         :options="availableLanguages"
         @change="changeLanguage(language)"
@@ -43,7 +43,7 @@ const availableLanguages = [Language.Spanish, Language.English];
           select: 'uppercase',
         }"
         :popper="{ placement: 'bottom-start' }"
-      />
+      /> -->
     </ClientOnly>
   </section>
 </template>
