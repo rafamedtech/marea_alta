@@ -1,13 +1,8 @@
-export const navLinks = [
+export const navLinks: NavLink[] = [
   {
     label: 'Menú',
     icon: 'i-heroicons-clipboard-document-list-solid',
     to: '/menu',
-  },
-  {
-    label: 'Eventos',
-    icon: 'i-heroicons-calendar-days-solid',
-    to: '/eventos',
   },
   {
     label: 'Encuesta',

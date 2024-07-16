@@ -37,7 +37,7 @@ export function useI18n() {
             placeholders: {
               name: 'Escribe tu nombre',
               email: 'Escribe tu correo electrónico',
-              waiter: 'Selecciona tu mesero',
+              waiter: 'Selecciona un mesero',
               comments: 'Escribe tus comentarios',
             },
           },
@@ -78,7 +78,7 @@ export function useI18n() {
           language.value === Language.Spanish
             ? 'La bienvenida por parte de nuestro mesero'
             : 'The welcome from our waiter/waitress',
-        rating: 5,
+        rating: '5',
       },
       {
         id: 2,
@@ -86,17 +86,17 @@ export function useI18n() {
           language.value === Language.Spanish
             ? 'La calidad y temperatura de los alimentos'
             : 'The quality and temperature of the food',
-        rating: 5,
+        rating: '5',
       },
       {
         id: 3,
         text: language.value === Language.Spanish ? 'La calidad de sus bebidas' : 'The quality of your drinks',
-        rating: 5,
+        rating: '5',
       },
       {
         id: 4,
         text: language.value === Language.Spanish ? 'La limpieza del restaurante' : 'The cleanliness of the restaurant',
-        rating: 5,
+        rating: '5',
       },
       {
         id: 5,
@@ -104,7 +104,7 @@ export function useI18n() {
           language.value === Language.Spanish
             ? '¿Cómo califica nuestro servicio en general?'
             : 'How do you rate our service in general?',
-        rating: 5,
+        rating: '5',
       },
     ];
   });

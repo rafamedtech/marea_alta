@@ -6,10 +6,12 @@
 [x] Hide events functionality
 [x] Translate surveyQuestions
 [x] Fix rounded button
-[x] Language modal on loading
 [x] Fix metadata
 [x] Fix reactive selected language
 [x] Update sidebar items and styles
+[x] Remove i18n
+[] Send survey to admin email
+[] Define standard menu structure
 [] Setup database
 [] Send survey to database
 []

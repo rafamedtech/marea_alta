@@ -1,29 +1,20 @@
 <script setup lang="ts">
-import { Language } from '@/types/Enums';
 import mainCover from '@/assets/img/portada.jpg';
 import { restInfo } from '@/utils/restInfo';
 
-const store = useStore();
-const { language } = storeToRefs(store);
-
-const isLoading = ref(true);
-
 const aboutInfo = computed(() => {
-  return language.value === Language.Spanish ? restInfo.es : restInfo.en;
+  return restInfo.es;
 });
-
-const { aboutPageLabels } = useI18n();
-
-onMounted(() => {
-  isLoading.value = false;
-});
+// const aboutInfo = computed(() => {
+//   return language.value === Language.Spanish ? restInfo.es : restInfo.en;
+// });
 
 useHead({
-  title: aboutPageLabels.value.title,
+  title: 'Acerca del restaurant',
   meta: [
     {
       name: 'description',
-      content: aboutPageLabels.value.description,
+      content: 'Conoce más sobre nuestro restaurante',
     },
     // Facebook Meta tags
     {
@@ -52,7 +43,7 @@ useHead({
 
 <template>
   <main>
-    <AppHeading :title="aboutPageLabels.title" />
+    <AppHeading title="Acerca del restaurant" />
 
     <section class="lg:mt-4 pb-24 pt-8">
       <section class="md:mx-auto md:w-1/2">
@@ -89,20 +80,18 @@ useHead({
         </section>
         <section class="py-8">
           <h3 class="font-bold">
-            {{ aboutPageLabels.address }}
+            Dirección:
             <span class="block font-normal">{{ aboutInfo.address }}</span>
           </h3>
           <h4 class="font-bold">
-            {{ aboutPageLabels.phone }}
+            Teléfono:
             <span class="block font-normal">{{ aboutInfo.phone }}</span>
           </h4>
         </section>
       </section>
 
       <section class="my-4 md:mx-auto md:w-1/2">
-        <h3 class="text-xl font-bold">
-          {{ aboutPageLabels.schedule }}
-        </h3>
+        <h3 class="text-xl font-bold">Horario de atención:</h3>
         <section v-for="{ id, name, time } in aboutInfo.schedule" :key="id" class="flex justify-between gap-4">
           <h4>{{ name }}</h4>
           <span>{{ time }}</span>

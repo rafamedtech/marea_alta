@@ -1,6 +1,15 @@
 <script setup lang="ts">
 const store = useStore();
 const { loadingScreen } = storeToRefs(store);
+
+useHead({
+  meta: [
+    {
+      name: 'apple-mobile-web-app-capable',
+      content: 'yes',
+    },
+  ],
+});
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 import { LogoutModal, Feedback } from '#components';
 
 export function useNav() {
-  const { navLinksLabels } = useI18n();
+  // const { navLinksLabels } = useI18n();
 
   const isDark = useDark();
   const toggleDark = useToggle(isDark);
@@ -12,7 +12,8 @@ export function useNav() {
 
   const links = computed<any>(() => {
     return [
-      navLinksLabels.value,
+      navLinks,
+      // navLinksLabels.value,
       [
         {
           label: darkModeLabel.value,
