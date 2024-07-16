@@ -22,13 +22,17 @@ const availableLanguages = [Language.Spanish, Language.English];
       <UVerticalNavigation
         :links="items"
         :ui="{
+          base: 'flex-col',
+          padding: 'py-2',
           active: 'before:bg-gray-800 text-primary dark:text-primary border border-primary',
           inactive: 'hover:text-white text-gray-400 hover:before:bg-gray-800/50 border border-transparent',
           icon: {
+            base: 'w-8 h-8',
             active: 'text-primary dark:text-primary',
             inactive: '',
           },
           rounded: '',
+          divider: { wrapper: { base: 'p-4' } },
         }"
       />
       <!-- <USelectMenu

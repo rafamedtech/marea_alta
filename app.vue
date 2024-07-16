@@ -1,15 +1,6 @@
 <script setup lang="ts">
-const store = useStore();
-const { loadingScreen } = storeToRefs(store);
-
-useHead({
-  meta: [
-    {
-      name: 'apple-mobile-web-app-capable',
-      content: 'yes',
-    },
-  ],
-});
+// const store = useStore();
+// const { loadingScreen } = storeToRefs(store);
 </script>
 
 <template>
@@ -21,6 +12,6 @@ useHead({
     <UModals />
     <UNotifications />
 
-    <Loader v-if="loadingScreen" />
+    <!-- <Loader v-if="loadingScreen" /> -->
   </section>
 </template>
