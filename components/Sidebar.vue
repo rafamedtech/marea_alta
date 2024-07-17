@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { Language } from '@/types/Enums';
+// import { Language } from '@/types/Enums';
 
 const { items } = defineProps<{
   items: NavLink[] | NavLink[][];
 }>();
 
-const store = useStore();
-const { language } = storeToRefs(store);
+// const store = useStore();
+// const { language } = storeToRefs(store);
 
-const { changeLanguage } = useI18n();
+// const { changeLanguage } = useI18n();
 
-const availableLanguages = [Language.Spanish, Language.English];
+// const availableLanguages = [Language.Spanish, Language.English];
 </script>
 
 <template>
@@ -24,8 +24,8 @@ const availableLanguages = [Language.Spanish, Language.English];
         :ui="{
           base: 'flex-col',
           padding: 'py-2',
-          active: 'before:bg-gray-800 text-primary dark:text-primary border border-primary',
-          inactive: 'hover:text-white text-gray-400 hover:before:bg-gray-800/50 border border-transparent',
+          active: 'before:bg-black text-primary dark:text-primary dark:before:bg-black ',
+          inactive: 'hover:text-gray-400 dark:hover:text-gray-400 text-gray-400 hover:before:bg-gray-800/50 ',
           icon: {
             base: 'w-8 h-8',
             active: 'text-primary dark:text-primary',
