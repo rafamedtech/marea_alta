@@ -9,7 +9,7 @@ const { items } = defineProps<{ items: NavLink[] | NavLink[][] }>();
       container: 'justify-between w-full',
       inner: 'flex-1 py-1',
       before: 'px-2',
-      active: 'text-primary px-2 active:before:bg-black hover:before:bg-black focus:before:bg-black',
+      active: 'text-primary px-2 active:before:bg-black bg-black hover:before:bg-black focus:before:bg-black',
       inactive: 'text-gray-400 ',
       icon: { active: 'text-primary', inactive: 'text-gray-500' },
     }"
