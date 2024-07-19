@@ -42,7 +42,7 @@ onMounted(() => {
         :ui="{ item: 'basis-full' }"
         class="overflow-hidden"
       >
-        <img :src="item" class="w-full max-h-64 object-cover" draggable="false" />
+        <img :src="item" class="w-full max-h-48 md:max-h-64 object-cover" draggable="false" />
       </UCarousel>
       <div class="bg-primary/75 absolute bottom-0 h-fit p-2">
         <h3
