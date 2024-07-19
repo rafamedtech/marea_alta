@@ -21,7 +21,7 @@ useHead({
 <template>
   <main>
     <section class="pt-4 md:pt-8">
-      <CategoryCard :category="currentCategory" title-size="large" />
+      <CategoryCarousel :category="currentCategory" title-size="large" />
     </section>
 
     <section class="relative">

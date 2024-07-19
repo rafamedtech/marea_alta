@@ -11,7 +11,7 @@
 [x] Update sidebar items and styles
 [x] Remove i18n
 [x] Back button in category
-[] Fix go to top button
+[x] Fix go to top button
 [] Send survey to admin email
 [] Define standard menu structure
 [] Setup database

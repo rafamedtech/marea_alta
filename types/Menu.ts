@@ -2,7 +2,7 @@ type CategoryOutline = {
   name: { en: string; es: string };
   description: { en: string; es: string };
   slug: string;
-  cover: string;
+  covers: string[];
 };
 type Category = CategoryOutline & {
   id: string;
@@ -22,7 +22,7 @@ type Section = {
   name: { en: string; es: string };
   description: { en: string; es: string };
   slug: string;
-  cover: string;
+  covers: string[];
   items: Item[];
 };
 
@@ -33,7 +33,7 @@ type Item = {
   description: { en: string; es: string };
   prices: number[];
   slug?: string;
-  cover?: string;
+  covers?: string[];
 };
 
 type Variant = {

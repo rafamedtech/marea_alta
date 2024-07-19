@@ -4,8 +4,11 @@ export const menu = [
       es: 'Entradas',
       en: 'Appetizers',
     },
-    cover:
+    covers: [
       'https://images.unsplash.com/photo-1544510807-1c0229035e63?q=80&w=2846&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1626200926784-2364c43be59f?q=80&w=2796&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1598679253597-adfd54b86fba?q=80&w=2787&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    ],
     description: {
       es: 'Comienza tu comida con una deliciosa entrada',
       en: 'Start your meal with a delicious appetizer',
@@ -107,8 +110,11 @@ export const menu = [
       es: 'Platos fuertes',
       en: 'Main dishes',
     },
-    cover:
+    covers: [
       'https://images.unsplash.com/photo-1559314809-0d155014e29e?q=80&w=2940&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?q=80&w=2832&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1562565651-7d4948f339eb?q=80&w=2832&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    ],
     description: {
       es: 'Platillos fuertes para disfrutar en compañía',
       en: 'Main dishes to enjoy in company',
