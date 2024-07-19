@@ -60,7 +60,7 @@ const availableLanguages = [Language.Spanish, Language.English];
 </script>
 
 <template>
-  <div class="sticky top-0 z-[49] flex justify-between bg-black p-4 text-center shadow lg:hidden">
+  <div class="fixed w-full top-0 z-[49] flex h-24 justify-between bg-black p-4 text-center shadow lg:hidden">
     <!-- Logo on mobile -->
     <Logo />
     <span v-if="admin" class="text-primary font-bold">Administrador</span>

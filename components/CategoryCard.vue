@@ -20,8 +20,8 @@ const categoryTitle = computed(() => (language.value === Language.Spanish ? name
 <template>
   <NuxtLink
     :to="`/menu/${slug}`"
-    class="w-full transition-all group hover:scale-95 md:hover:scale-100 md:hover:ring-primary focus:scale-95 md:focus:scale-100 focus:ring-4 focus:ring-primary"
-    :class="{ 'pointer-events-none hover:scale-100 md:hover:scale-100': !link, 'focus:rounded-xl rounded-xl': rounded }"
+    class="w-full transition-all group md:hover:ring-primary focus:ring-4 focus:ring-primary"
+    :class="{ 'pointer-events-none': !link, 'focus:rounded-xl rounded-xl': rounded }"
   >
     <UCard
       :ui="{

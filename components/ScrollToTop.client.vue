@@ -23,24 +23,26 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll);
+  showScrollToTop.value = false;
 });
 </script>
 
 <template>
   <section
-    class="text-primary fixed bottom-[5.5rem] right-4 z-[49] flex gap-2 flex-row rounded-xl lg:bottom-8 lg:right-8"
+    class="text-primary fixed bottom-4 right-[5.3rem] z-[49] flex gap-2 flex-row rounded-xl lg:bottom-8 lg:right-8"
   >
     <UButton
       v-if="showScrollToTop"
-      :label="scrollToTopLabels.scrollToTop"
+      label="Subir"
       icon="i-heroicons-arrow-small-up"
       :ui="{ inline: 'flex-col', rounded: 'rounded-none' }"
       class="min-w-16"
       color="white"
       @click="scrollToTop"
     />
+
     <UButton
-      :label="scrollToTopLabels.back"
+      label="Atrás"
       icon="i-heroicons-arrow-small-left"
       :ui="{ inline: 'flex-col', rounded: 'rounded-none' }"
       class="min-w-16"

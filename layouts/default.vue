@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import DropdownMenu from '~/components/DropdownMenu.vue';
+
 const { links } = useNav();
 const { navLinksLabels } = useI18n();
 </script>
@@ -9,14 +11,18 @@ const { navLinksLabels } = useI18n();
       <Sidebar :items="links" />
     </section>
 
-    <div class="flex-auto transition-all lg:w-5/6">
+    <div class="flex-auto transition-all min-h-dvh h-dvh relative pt-24 md:pt-0 lg:w-5/6">
       <Topbar />
 
-      <UContainer class="min-h-screen bg-gray-100 transition-colors dark:bg-neutral-900 lg:relative lg:px-12">
+      <UContainer class="bg-gray-100 min-h-dvh transition-colors dark:bg-neutral-900 relative lg:px-12">
         <slot> </slot>
       </UContainer>
 
-      <BottomNavbar :items="navLinksLabels" class="lg:hidden" />
+      <div class="fixed bottom-4 right-4">
+        <DropdownMenu :links="navLinksLabels" />
+      </div>
+
+      <!-- <BottomNavbar :items="navLinksLabels" class="lg:hidden" /> -->
 
       <!-- <LanguageModal /> -->
     </div>

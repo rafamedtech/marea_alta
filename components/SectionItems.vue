@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import { Language } from '@/types/Enums';
-
 const { items, columns } = defineProps<{
   items: any[];
   columns?: number;
 }>();
-const store = useStore();
-const { language } = storeToRefs(store);
 </script>
 
 <template>
@@ -25,19 +21,19 @@ const { language } = storeToRefs(store);
       <div class="flex items-center justify-between gap-4 md:flex-col md:items-stretch md:gap-2">
         <section>
           <h4 class="text-lg font-bold">
-            {{ language === Language.Spanish ? item.name.es : item.name.en }}
+            {{ item.name.es }}
           </h4>
 
           <p v-if="item.description" class="text-gray-600 dark:text-gray-400">
-            {{ language === Language.Spanish ? item.description.es : item.description.en }}
+            {{ item.description.es }}
           </p>
         </section>
         <div class="flex justify-end gap-2">
           <p class="font-bold dark:text-gray-100" :class="{ 'text-black': !item.description }">
             <span v-if="item.prices.length"
-              >{{ item.prices[0] }}<span v-if="item.prices[1]">/{{ item.prices[1] }}</span></span
+              >{{ `$${item.prices[0]}` }}<span v-if="item.prices[1]">/{{ `$${item.prices[1]}` }}</span></span
             >
-            <span v-else>{{ language === Language.Spanish ? 'Precio varía' : 'Price varies' }}</span>
+            <span v-else>Precio varía</span>
           </p>
         </div>
       </div>
