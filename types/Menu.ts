@@ -1,6 +1,6 @@
 type CategoryOutline = {
-  name: { en: string; es: string };
-  description: { en: string; es: string };
+  name: string;
+  description: string;
   slug: string;
   covers: string[];
 };
@@ -31,9 +31,10 @@ type Item = {
   createdAt?: Date;
   name: { en: string; es: string };
   description: { en: string; es: string };
-  prices: number[];
+  price: number;
   slug?: string;
   covers?: string[];
+  variants?: Variant[];
 };
 
 type Variant = {

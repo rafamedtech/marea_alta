@@ -22,8 +22,6 @@ const { navLinksLabels } = useI18n();
         <DropdownMenu :links="navLinksLabels" />
       </div>
 
-      <!-- <BottomNavbar :items="navLinksLabels" class="lg:hidden" /> -->
-
       <!-- <LanguageModal /> -->
     </div>
   </main>

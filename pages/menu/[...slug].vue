@@ -8,7 +8,7 @@ const currentCategory = menu.value?.find((category) => category.slug === slug) ?
 const columns = ref(1);
 
 useHead({
-  title: currentCategory?.name.es,
+  title: currentCategory?.name,
   meta: [
     {
       name: 'description',

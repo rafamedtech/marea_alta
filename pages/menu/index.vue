@@ -38,9 +38,7 @@ useHead({
     <AppHeading title="Nuestro menú" />
 
     <section class="grid gap-6 md:grid-cols-2 md:gap-8 md:px-2 md:pt-4 pb-24 pt-8">
-      <!-- <CategoryCard v-for="category in menu" :key="category.name.es" :category="category" link padded /> -->
-      <CategoryCarousel v-for="category in menu" :key="category.name.es" :category="category" link padded />
-      <!-- <CategoryCarousel /> -->
+      <CategoryCarousel v-for="category in menu" :key="category.name" :category="category" link padded />
     </section>
   </main>
 </template>

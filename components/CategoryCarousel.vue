@@ -11,7 +11,7 @@ const { category, titleSize, link, rounded = false } = defineProps<Props>();
 
 const { name, covers, slug } = toRefs(category);
 
-const categoryTitle = computed(() => name.value.es);
+const categoryTitle = computed(() => name.value);
 
 const carouselRef = ref();
 
